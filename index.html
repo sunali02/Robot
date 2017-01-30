@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
+<style>
+
+
+.robot{
+  left:200px;
+  position:relative;
+}
+.brain{
+background:radial-gradient(circle, white 15%, transparent 40%), #5F9EA0;
+background:-webkit-radial-gradient(circle, white 15%, transparent 40%),#5F9EA0;
+background:-moz-radial-gradient(circle, white 15%, transparent 40%), #5F9EA0;
+background-size:75px 130px;
+  height:150px;
+  width:150px;
+  position:relative;
+  left:62px;
+  border-top:10px solid #A9A9A9;
+  border-left:10px solid #A9A9A9;
+  border-right:10px solid #A9A9A9;
+  border-bottom:30px solid #DEB887;
+  border-radius:20px 20px 10px 10px;
+ }
+
+  @keyframes blink{
+    50% {
+   background: radial-gradient(circle, red 15%, transparent 40%), #8A2BE2;
+  }
+}
+
+ @-webkit-keyframes blink{
+    50% {
+   background: -webkit-radial-gradient(circle, red 15%, transparent 40%),  #8A2BE2;
+  }
+}
+
+ @-moz-keyframes blink{
+    50% {
+   background: -moz-radial-gradient(circle, red 15%, transparent 40%),#8A2BE2;
+  }
+}
+.foot1{
+  height:40px;
+  width:50px;
+  background:#DEB887;
+  border-radius:30px 30px 0 0;
+  border:10px solid grey;
+  position:relative;
+  left:168px;
+  top:-120px;
+  z-index:-1;
+  }
+.foot2{
+   height:40px;
+   width:50px;
+   background:#DEB887;
+   border-radius:30px 30px 0 0;
+   border:10px solid grey;
+   position:relative;
+   left:50px;
+   top:-178px;
+   z-index:-1;
+}
+.leg1{
+  height:80px;
+  width:30px;
+  border-left:10px solid grey;
+  border-right:10px solid grey;
+  border-bottom:30px solid grey;
+  background: linear-gradient( bottom right, #D2691E, rgba(0,0,0,0));
+  background: -webkit-linear-gradient( bottom right, #D2691E, rgba(0,0,0,0));
+  background: -moz-linear-gradient( bottom right, #D2691E, rgba(0,0,0,0));
+  position:relative;
+  left:175px;
+
+  }
+.leg2{
+  height:80px;
+  width:30px;
+  border-left:10px solid grey;
+  border-right:10px solid grey;
+  border-bottom:30px solid grey;
+  background: linear-gradient( bottom right, #D2691E, rgba(0,0,0,0));
+  background: -webkit-linear-gradient( bottom right, #D2691E, rgba(0,0,0,0));
+  background: -moz-linear-gradient( bottom right, #D2691E, rgba(0,0,0,0));
+  left:60px;
+  top:-110px;
+  position:relative;
+}
+.Mouth{
+  background: #DEB887;
+  width: 55px;
+  height: 20px;
+  position: relative;
+  top: 110px;
+  left: 47px;
+}
+.torso{
+  height:310px;
+  width:220px;
+  background:#5F9EA0;
+  border:10px solid #A9A9A9;
+  border-radius:20px 20px;
+  position:relative;
+  left:30px;
+}
+.beep{
+  height:20px;
+  width:30px;
+  background:#D2691E;
+  border-radius:10px 10px 0 0;
+  position:relative;
+  left:130px;
+}
+.antena{
+  height:0;
+  width:5px;
+  border:5px solid transparent;
+  border-top:10px solid #D2691E;
+  border-bottom:80px solid #DEB887;
+  position:relative;
+  left:137px;
+}
+.left{
+  font-family: 'Poller One', cursive;
+  font-weight:bold;
+  font-size:250px;
+  color:#D2691E;
+  transform: rotate(200deg);
+  -webkit-transform: rotate(200deg);
+  -moz-transform:rotate(200deg);
+  position:relative;
+  left:-230px;
+  top:-30px;
+  z-index:-1;
+}
+.right{
+  font-family:  'Poller One', cursive;
+  font-weight:bold;
+  font-size:250px;
+  color:#D2691E;
+  transform: scaleY(-1) rotate(20deg);
+  -webkit-transform: scaleY(-1) rotate(20deg);
+  -moz-transform:  scaleY(-1) rotate(20deg);
+  position: relative;
+  top: -328px;
+  left: 230px;
+  z-index:-1
+}
+
+.laser{
+  animation:blink .5s infinite;
+  -webkit-animation:blink .5s infinite;
+  -moz-animation: blink .5s inifinite;
+}
+button{
+    position: relative;
+    top: -173px;
+    padding: 10px;
+    margin: 10px ;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 45px;
+  }
+  .moves{
+  padding: 8px 22px 8px 22px;
+}
+.color{
+padding: 8px 20px 8px 20px;
+}
+.moverobot{
+	animation: move 5s infinite;
+  -webkit-animation:move 5s infinite;
+}
+
+@keyframes move{
+  50%{
+  position: relative;
+  left:800px;
+}
+}
+@-webkit-keyframes move{
+ 50%{
+  position: relative;
+  left:800px;
+}
+}
+@-moz-keyframes move{
+ 50%{
+  position: relative;
+  left:800px;
+}
+}
+
+</style>
+</head>
+
+<body>
+<div class="robot">
+<div class="antena"></div>
+<div class="beep"></div>
+<div class="brain">
+<div class="Mouth"></div></div>
+<div class="torso">
+    <div class="left">j</div>
+    <div class="right">j</div>
+
+</div>
+  <div class="foot"></div>
+  <div class="leg1"></div>
+  <div class="leg2"></div>
+  <div class="foot1"></div>
+  <div class="foot2"></div>
+  <div class="rect"></div>
+</div>
+<button class="flash">Blink</button>
+<button class="color">Change Color</button>
+<button class="moves">Move Robot</button>
+<script>
+     $('.flash').click(function()  {
+     $('.brain').toggleClass('laser');
+     });
+     $(".color").click(function() {
+
+var red = Math.floor(Math.random() * 255);
+ var green = Math.floor(Math.random() * 255);
+ var blue = Math.floor(Math.random() * 255);
+ var randomRGBA='rgba('+red+','+green+','+blue+',1)';
+ $("body").css("background",randomRGBA);
+
+ });
+ $(".moves").click(function() {
+  		$(".robot").toggleClass('moverobot');
+		});
+$("button").hover(function(){
+    $(this).css("background-color", "blue");
+    }, function(){
+    $(this).css("background-color", "#cc5");
+});
+    </script>
+</body>
